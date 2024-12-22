@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow-passing-data:
-    uses: dummyrepos/ReusableWorkflows/.github/workflows/maven/basic.yaml@main
+    uses: dummyrepos/ReusableWorkflows/.github/workflows/maven-basic.yaml@main
     with:
       goal: package
       java_version: '17'
