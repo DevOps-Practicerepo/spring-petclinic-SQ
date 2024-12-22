@@ -4,19 +4,12 @@ on:
   push:
     branches:
       - main
+
 jobs:
-  buildwith17:
-    name: "maven"
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - shell: bash
-        env:
-          SUPER_SECRET: ${{ secrets.USERNAME }}
-        run: |
-          echo "$SUPER_SECRET"
+  call-workflow-passing-data:
+    uses: dummyrepos/ReusableWorkflows/.github/workflows/maven/basic.yaml@main
+    with:
+      goal: package
+      java_version: '17'
       
 
