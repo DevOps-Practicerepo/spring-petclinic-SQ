@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: print github context
-        run: "{{ github }}"
+        run: echo "{{ toJson(github) }}"
       
 
