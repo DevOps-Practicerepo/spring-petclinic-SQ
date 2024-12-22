@@ -9,7 +9,9 @@ jobs:
     name: "maven"
     runs-on: ubuntu-24.04
     steps:
-      - name: print github context
-        run: echo "{{ github }}"
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       
 
